@@ -1,6 +1,6 @@
 import HeroSection from '@/components/shadcn-studio/blocks/hero-section-01/hero-section-01'
-import Header from '@/components/shadcn-studio/blocks/hero-section-01/header'
 import type { NavigationSection } from '@/components/shadcn-studio/blocks/hero-section-01/header'
+import Navbar from '@/components/shadcn-studio/blocks/navbar-component-01/navbar-component-01'
 
 const navigationData: NavigationSection[] = [
   {
@@ -25,7 +25,7 @@ const HeroSectionPage = () => {
   return (
     <>
       {/* Header Section */}
-      <Header navigationData={navigationData} />
+      <Navbar navigationData={[]}/>
 
       {/* Main Content */}
       <main className='flex flex-col'>
