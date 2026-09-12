@@ -15,7 +15,7 @@ const navigationData = [
   },
   {
     title: 'Contact Us',
-    href: '#'
+    href: '#contact'
   }
 ]
 
