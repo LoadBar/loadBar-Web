@@ -20,17 +20,25 @@ type ComparisonData = {
   column3Header: string
 }
 
-const CompareUILib = ({ data }: { data: ComparisonData }) => {
+const CompareUILib = ({
+  data,
+  title = 'Choose the Right AI Tool for Powerful, Faster Writing',
+  description = 'Find the perfect AI tool to help you write clearer, faster, and more impactful content.'
+}: {
+  data: ComparisonData
+  title?: string
+  description?: string
+}) => {
   return (
     <div id="features" className='bg-muted px-4 py-8 sm:px-6 sm:py-16 lg:px-8 lg:py-24'>
       <div className='bg-background mx-auto max-w-7xl space-y-12 rounded-3xl px-8 py-16'>
         {/* Header */}
         <div className='mb-8 space-y-4 md:mb-12 lg:mb-24'>
           <h2 className='text-center text-xl font-semibold sm:text-2xl md:text-3xl lg:text-4xl'>
-            Choose the Right AI Tool for Powerful, Faster Writing
+            {title}
           </h2>
           <p className='text-muted-foreground mx-auto max-w-4xl text-center text-base md:text-xl'>
-            Find the perfect AI tool to help you write clearer, faster, and more impactful content.
+            {description}
           </p>
         </div>
         {/* Comparison Table */}

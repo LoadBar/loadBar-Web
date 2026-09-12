@@ -1,212 +1,133 @@
+import type { Metadata } from 'next'
 import HeroSection from '@/components/shadcn-studio/blocks/hero-section-01/hero-section-01'
-import type { NavigationSection } from '@/components/shadcn-studio/blocks/hero-section-01/header'
 import Navbar from '@/components/shadcn-studio/blocks/navbar-component-01/navbar-component-01'
 import AboutUs from '@/components/shadcn-studio/blocks/about-us-page-01/about-us-page-01'
-import { SparklesIcon, TargetIcon, StarIcon, MedalIcon } from 'lucide-react'
+import { FolderGit2Icon, GitCommitHorizontalIcon, ChartLineIcon, ActivityIcon, LinkIcon } from 'lucide-react'
 import CompareUILib from '@/components/shadcn-studio/blocks/compare-07/compare-07'
 import LogoCloud from '@/components/shadcn-studio/blocks/logo-cloud-01/logo-cloud-01'
 import ContactUs from '@/components/shadcn-studio/blocks/contact-us-page-01/contact-us-page-01'
-import { Clock8Icon, MapPinIcon, BriefcaseBusinessIcon, PhoneIcon } from "lucide-react";
 
+export const metadata: Metadata = {
+  title: 'LoadBar',
+  description:
+    'Connect your GitHub account and turn your repositories, commits, and development activity into a clear dashboard.'
+}
 
-const navigationData: NavigationSection[] = [
+const navigationData = [
   {
-    title: 'Home',
-    href: '#'
+    title: 'About',
+    href: '#about'
   },
   {
-    title: 'Products',
-    href: '#'
+    title: 'Features',
+    href: '#features'
   },
   {
-    title: 'About Us',
-    href: '#'
+    title: 'Overview',
+    href: '#overview'
   },
   {
-    title: 'Contact Us',
-    href: '#'
+    title: 'Contact',
+    href: '#contact'
   }
 ]
 
 const stats = [
   {
-    icon: (
-      <SparklesIcon />
-    ),
-    value: '20+',
-    description: 'Years of Experience'
+    icon: <FolderGit2Icon />,
+    value: 'Repositories',
+    description: 'Repository insights'
   },
   {
-    icon: (
-      <TargetIcon />
-    ),
-    value: '70+',
-    description: 'Successful Projects'
+    icon: <GitCommitHorizontalIcon />,
+    value: 'Commits',
+    description: 'Commit activity'
   },
   {
-    icon: (
-      <StarIcon />
-    ),
-    value: '550+',
-    description: 'Customer Reviews'
+    icon: <ChartLineIcon />,
+    value: 'Contributions',
+    description: 'Contribution tracking'
   },
   {
-    icon: (
-      <MedalIcon />
-    ),
-    value: '25',
-    description: 'Achieve Awards'
+    icon: <ActivityIcon />,
+    value: 'Overview',
+    description: 'Developer activity overview'
   }
 ]
 
 const comparisonData = {
   column1Header: {
-    icon: {
-      light: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/notion-icon.png',
-      dark: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/notion-white.png'
-    },
-    title: 'Notion ai'
+    title: 'On GitHub'
   },
   column2Header: {
-    icon: 'https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/compare/image-11.png',
-    title: 'Jasper'
+    title: 'In LoadBar'
   },
   column3Header: 'What this means for you',
   features: [
     {
-      name: 'Pricing',
-      column1: 'Included inside Notion workspace, affordable add-on',
-      column2: 'Subscription-based, higher pricing tiers',
-      column3: 'Choose based on your budget and team size'
+      name: 'Repository insights',
+      column1: 'Repositories are spread across profiles, organizations, and individual project pages',
+      column2: 'Review repository insights in one dashboard',
+      column3: 'See the projects you work on without jumping between pages'
     },
     {
-      name: 'Best for',
-      column1: 'Best for writers who want AI inside their workspace',
-      column2: 'Best for marketing teams & brand-heavy content',
-      column3: 'Pick the tool that matches your workflow and goals'
+      name: 'Commit activity',
+      column1: 'Commit history lives inside each repository',
+      column2: 'See commit activity across your work',
+      column3: 'Understand when and where you ship code'
     },
     {
-      name: 'Writing Quality',
-      column1: 'Clean, structured writing suited for notes & documents',
-      column2: 'Persuasive, creative marketing-style writing',
-      column3: 'Notion = clarity; Jasper = persuasion & creativity'
+      name: 'Contribution tracking',
+      column1: 'Contributions appear as a graph on your profile',
+      column2: 'Track contributions alongside your other activity',
+      column3: 'Follow your contribution history in context'
     },
     {
-      name: 'Templates',
-      column1: 'Minimal templates, utility-focused',
-      column2: '50+ templates for ads, blogs, and social posts',
-      column3: 'If templates matter, Jasper gives more flexibility'
+      name: 'Developer activity overview',
+      column1: 'Activity is split across feeds, profiles, and repositories',
+      column2: 'A single overview of your development activity',
+      column3: 'Understand your GitHub activity at a glance'
     },
     {
-      name: 'Long-form Writing',
-      column1: 'Strong for drafting & expanding text',
-      column2: 'Strong guided workflows for long-form content',
-      column3: 'Jasper is better for blogs & long-form content'
-    },
-    {
-      name: 'SEO Tools',
-      column1: 'Limited SEO optimization',
-      column2: 'SEO features + SurferSEO integration',
-      column3: 'Choose Jasper for SEO-driven content creation'
-    },
-    {
-      name: 'Multilingual Support',
-      column1: 'Basic multilingual support',
-      column2: '30+ languages with tone controls',
-      column3: 'Jasper is ideal for global or multilingual teams'
-    },
-    {
-      name: 'Brand Voice',
-      column1: 'No dedicated brand-voice training',
-      column2: 'Custom brand voice & style training',
-      column3: 'Jasper helps maintain brand consistency'
-    },
-    {
-      name: 'Integrations',
-      column1: 'Deep integration inside Notion ecosystem',
-      column2: 'Integrates with Google Docs, CMS tools, Surfer, Hubspot',
-      column3: 'Use Jasper for cross-team, multi-platform workflows'
-    },
-    {
-      name: 'Publishing',
-      column1: 'Export or publish within Notion pages',
-      column2: 'Supports publishing workflows to multiple platforms',
-      column3: 'Jasper is better for marketing publishing needs'
+      name: 'One place to look',
+      column1: 'You piece the story together from multiple GitHub screens',
+      column2: 'Repositories, commits, and activity in one view',
+      column3: 'Spend less time hunting for work you already did'
     }
   ]
 }
 
 const logos = [
-  {
-    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/amazon-logo-bw.png',
-    alt: 'Amazon'
-  },
-  {
-    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/hubspot-logo-bw.png',
-    alt: 'HubSpot'
-  },
-  {
-    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/walmart-logo-bw.png',
-    alt: 'Walmart'
-  },
-  {
-    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/microsoft-logo-bw.png',
-    alt: 'Microsoft'
-  },
-  {
-    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/evernote-icon-bw.png',
-    alt: 'Evernote'
-  },
-  {
-    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/paypal-logo-bw.png',
-    alt: 'PayPal'
-  },
-  {
-    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/airbnb-logo-bw.png',
-    alt: 'Airbnb'
-  },
-  {
-    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/adobe-logo-bw.png',
-    alt: 'Adobe'
-  },
-  {
-    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/shopify-logo-bw.png',
-    alt: 'Shopify'
-  },
-  {
-    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/huawei-logo-bw.png',
-    alt: 'Huawei'
-  }
+  { alt: 'Repository insights' },
+  { alt: 'Commit activity' },
+  { alt: 'Contribution tracking' },
+  { alt: 'Developer activity overview' },
+  { alt: 'Repositories' },
+  { alt: 'Commits' },
+  { alt: 'Contributions' },
+  { alt: 'GitHub account' }
 ]
 
 const contactInfo = [
   {
-    title: 'Office Hours',
-    icon: (
-      <Clock8Icon />
-    ),
-    description: 'Monday-Friday\n8:00 am to 5:00 pm'
+    title: 'Product',
+    icon: <FolderGit2Icon />,
+    description: 'A GitHub developer\ndashboard'
   },
   {
-    title: 'Our Address',
-    icon: (
-      <MapPinIcon />
-    ),
-    description: '802 Perston Rd,Maine\n96812, USA'
+    title: 'What you can view',
+    icon: <GitCommitHorizontalIcon />,
+    description: 'Repositories, commits,\nand contributions'
   },
   {
-    title: 'Office 2',
-    icon: (
-      <BriefcaseBusinessIcon />
-    ),
-    description: '802 Perston Rd,Maine\n96812, USA'
+    title: 'Overview',
+    icon: <ActivityIcon />,
+    description: 'Your development activity\nin one place'
   },
   {
-    title: 'Get in Touch',
-    icon: (
-      <PhoneIcon />
-    ),
-    description: '+1-316-888-9685\n+1-316-477-0169'
+    title: 'Get started',
+    icon: <LinkIcon />,
+    description: 'Connect your GitHub\naccount to begin'
   }
 ]
 
@@ -214,19 +135,39 @@ const HeroSectionPage = () => {
   return (
     <>
       {/* Header Section */}
-      <Navbar navigationData={[]}/>
+      <Navbar navigationData={navigationData} />
 
       {/* Main Content */}
       <main className='flex flex-col'>
         <HeroSection />
-        <br/>
-        <AboutUs stats={stats} />
-        <br/>
-        <CompareUILib data={comparisonData} />
-        <br/>
-        <LogoCloud logos={logos} />
-        <br/>
-        <ContactUs contactInfo={contactInfo} />
+        <br />
+        <AboutUs
+          stats={stats}
+          title='About LoadBar'
+          description='LoadBar is a GitHub developer dashboard that will let you connect your GitHub account and view repository, commit, contribution, and development activity in one place.'
+          ctaLabel='Explore features'
+          ctaHref='#features'
+        />
+        <br />
+        <CompareUILib
+          data={comparisonData}
+          title='GitHub data, one clear dashboard'
+          description='See how LoadBar brings your repositories, commits, contributions, and development activity together.'
+        />
+        <br />
+        <LogoCloud
+          logos={logos}
+          titlePrefix='The GitHub activity'
+          titleHighlight='LoadBar brings together'
+          titleSuffix=''
+          description='Repository insights, commit activity, contribution tracking, and a developer activity overview.'
+        />
+        <br />
+        <ContactUs
+          contactInfo={contactInfo}
+          subtitle='Questions about LoadBar?'
+          description='LoadBar is a GitHub developer dashboard for viewing your repositories, commits, and development activity in one place.'
+        />
       </main>
     </>
   )

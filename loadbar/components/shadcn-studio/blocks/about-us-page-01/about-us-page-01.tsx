@@ -8,19 +8,30 @@ type StatItem = {
   description: string
 }[]
 
-const AboutUs = ({ stats }: { stats: StatItem }) => {
+const AboutUs = ({
+  stats,
+  title = 'About Us',
+  description = 'Our achievement story stands as a powerful testament to teamwork and perseverance. United, we have faced challenges, celebrated victories, and woven a narrative of growth and success.',
+  ctaLabel = 'Read more',
+  ctaHref = '#'
+}: {
+  stats: StatItem
+  title?: string
+  description?: string
+  ctaLabel?: string
+  ctaHref?: string
+}) => {
   return (
     <section id="about" className='bg-muted py-8 sm:py-16 lg:py-24'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         {/* Header */}
         <div className='mb-12 space-y-4 text-center md:mb-16 lg:mb-24'>
-          <h2 className='text-2xl font-semibold tracking-tight md:text-3xl lg:text-4xl'>About Us</h2>
+          <h2 className='text-2xl font-semibold tracking-tight md:text-3xl lg:text-4xl'>{title}</h2>
           <p className='text-muted-foreground text-xl'>
-            Our achievement story stands as a powerful testament to teamwork and perseverance. United, we have faced
-            challenges, celebrated victories, and woven a narrative of growth and success.
+            {description}
           </p>
-          <Button size='lg' className='group' render={<a href='#' />} nativeButton={false}>
-            Read more
+          <Button size='lg' className='group' render={<a href={ctaHref} />} nativeButton={false}>
+            {ctaLabel}
             <ArrowRightIcon className='transition-transform duration-200 group-hover:translate-x-0.5' />
           </Button>
         </div>

@@ -7,15 +7,15 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className='mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 text-center sm:px-6 lg:px-8'>
         <div className='bg-muted flex items-center gap-2.5 rounded-full border px-2 py-1 text-sm'>
-          <Badge>AI-Powered Base</Badge>
-          <span className='text-muted-foreground'>Solution for client-facing businesses</span>
+          <Badge>GitHub Dashboard</Badge>
+          <span className='text-muted-foreground'>Your activity, in one place</span>
         </div>
 
         <h1 className='text-3xl leading-[1.29167] font-bold text-balance sm:text-4xl lg:text-5xl'>
-          Sizzling Summer Delights
+          Understand your GitHub
           <br />
           <span className='relative'>
-            Effortless
+            activity
             <svg
               width='223'
               height='12'
@@ -45,24 +45,23 @@ const HeroSection = () => {
               </defs>
             </svg>
           </span>{' '}
-          Recipes for Parties!
+          at a glance
         </h1>
 
         <p className='text-muted-foreground'>
-          Dive into a world of flavor this summer with our collection of Sizzling Summer Delights!
-          <br />
-          From refreshing appetizers to delightful desserts
+          Connect your GitHub account and turn your repositories, commits, and development activity into a clear
+          dashboard.
         </p>
 
-        <Button size='lg' render={<a href='#' />} nativeButton={false}>
-          Try It Now
+        <Button size='lg' render={<a href='/onboarding' />} nativeButton={false}>
+          Connect GitHub
         </Button>
       </div>
 
       {/* Image */}
       <img
-        src='https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/hero/image-19.png'
-        alt='Dishes'
+        src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=80'
+        alt='Developer dashboard overview'
         className='min-h-67 w-full object-cover'
       />
     </section>

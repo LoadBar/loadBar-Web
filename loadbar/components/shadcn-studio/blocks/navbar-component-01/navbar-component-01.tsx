@@ -29,11 +29,11 @@ const Navbar = ({ navigationData }: { navigationData: NavigationItem }) => {
           <a href='#home'>
             <Logo className='text-foreground gap-3' />
           </a>
-          <a href='#jobs' className='hover:text-primary max-md:hidden'>
-            Jobs
+          <a href='#overview' className='hover:text-primary max-md:hidden'>
+            Overview
           </a>
           <a href='#contact' className='hover:text-primary max-md:hidden'>
-            Contact Us
+            Contact
           </a>
         </div>
 

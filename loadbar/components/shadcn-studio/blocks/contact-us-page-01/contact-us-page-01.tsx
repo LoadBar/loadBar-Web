@@ -9,7 +9,15 @@ type ContactInfo = {
   description: string
 }[]
 
-const ContactUs = ({ contactInfo }: { contactInfo: ContactInfo }) => {
+const ContactUs = ({
+  contactInfo,
+  subtitle = 'Happy to help you!',
+  description = 'shadcn/studio gives you the blocks and components you need to create a truly professional website, landing page or admin panel for your SaaS and gives the blocks.'
+}: {
+  contactInfo: ContactInfo
+  subtitle?: string
+  description?: string
+}) => {
   return (
     <section id="contact" className='bg-muted py-8 sm:py-16 lg:py-24'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
@@ -27,10 +35,9 @@ const ContactUs = ({ contactInfo }: { contactInfo: ContactInfo }) => {
           />
 
           <div>
-            <h3 className='mb-6 text-2xl font-semibold'>Happy to help you!</h3>
+            <h3 className='mb-6 text-2xl font-semibold'>{subtitle}</h3>
             <p className='text-muted-foreground mb-10 text-lg font-medium'>
-              shadcn/studio gives you the blocks and components you need to create a truly professional website, landing
-              page or admin panel for your SaaS and gives the blocks.
+              {description}
             </p>
 
             {/* Contact Info Grid */}
